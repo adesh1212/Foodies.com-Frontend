@@ -1,5 +1,5 @@
 import React from 'react'
-import Delete from '@material-ui/icons/Delete'
+import { Delete } from '@mui/icons-material';
 import { useCart, useDispatchCart } from '../components/ContextReducer'
 import { toast } from 'react-toastify';
 

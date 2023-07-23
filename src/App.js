@@ -11,7 +11,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import MyOrders from './screens/MyOrders';
 
 
 
@@ -25,7 +24,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/myorders" element={<MyOrders />} />
           </Routes>
         </div>
       </Router>
