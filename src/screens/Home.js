@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
+import { BASE_URL } from '../URI';
+import "./Home.css"
 
 export default function Home() {
     let [search, setSearch] = useState('');
@@ -10,7 +12,7 @@ export default function Home() {
 
     async function getData() {
         try {
-            const res = await fetch('http://localhost:5000/api/foodData');
+            const res = await fetch(`${BASE_URL}/api/foodData`);
             const food_data = await res.json();
             // console.log(food_data[0]);
             setfoodData(food_data[0]);
@@ -42,13 +44,13 @@ export default function Home() {
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="https://source.unsplash.com/random/300×300/?burger" className="d-block w-100" alt='burger' />
+                            <img src="https://source.unsplash.com/random/300×300/?burger" className="carousel-img d-block w-100" alt='burger' />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/300×300/?food" className="d-block w-100" alt='' />
+                            <img src="https://source.unsplash.com/random/300×300/?food" className="carousel-img d-block w-100" alt='' />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/300×300/?pizza" className="d-block w-100"
+                            <img src="https://source.unsplash.com/random/300×300/?pizza" className="carousel-img d-block w-100"
                                 alt='' />
                         </div>
                     </div>

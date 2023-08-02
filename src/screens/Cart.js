@@ -2,6 +2,7 @@ import React from 'react'
 import { Delete } from '@mui/icons-material';
 import { useCart, useDispatchCart } from '../components/ContextReducer'
 import { toast } from 'react-toastify';
+import { BASE_URL } from '../URI';
 
 function Cart() {
     let data = useCart();
@@ -9,7 +10,7 @@ function Cart() {
 
     if (data.length === 0) {
         return (
-            <div className='m-5 w-100 text-center fs-3'>
+            <div className='m-5 text-center fs-3'>
                 Cart is Empty!
             </div>
         )
@@ -21,7 +22,7 @@ function Cart() {
         let email = localStorage.getItem('userEmail');
         // console.log(email);
 
-        const response = await fetch('http://localhost:5000/api/checkout', {
+        const response = await fetch(`${BASE_URL}/api/checkout`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +42,7 @@ function Cart() {
     }
 
     return (
-        <div className='container mt-4 table-responsive table-responsive-sm table-responsive-md'>
+        <div className='container mt-4 table-responsive table-responsive-sm table-responsive-md' style={{height:'85%'}}>
             <table className="table table-hover">
                 <thead>
                     <tr>

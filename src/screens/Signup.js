@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { BASE_URL } from '../URI';
 
 export default function Signup() {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Sending form data to the backend
-        const response = await fetch('http://localhost:5000/api/signup', {
+        const response = await fetch(`${BASE_URL}/api/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

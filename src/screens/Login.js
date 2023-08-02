@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDispatchCart } from '../components/ContextReducer';
+import { BASE_URL } from '../URI';
 
 export default function Login() {
   let {setEmail} = useDispatchCart()
@@ -17,7 +18,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Sending form data to the backend
-    const response = await fetch('http://localhost:5000/api/login', {
+    const response = await fetch(`${BASE_URL}/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
